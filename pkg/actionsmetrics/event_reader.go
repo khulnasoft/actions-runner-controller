@@ -168,7 +168,7 @@ func (reader *EventReader) ProcessWorkflowJobEvent(ctx context.Context, event in
 			s := parseResult.RunTime.Seconds()
 			runTimeSeconds = &s
 
-			log.Info("reading workflow_job logs for completed job", "exit_code", exitCode, "run_time_seconds", &runTimeSeconds, "parseResult", &parseResult)
+   log.Info("reading workflow_job logs for completed job", "exit_code", exitCode, "run_time_seconds", *runTimeSeconds, "parseResult", parseResult)
 		}
 
 		if *e.WorkflowJob.Conclusion == "failure" {
