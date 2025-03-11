@@ -120,8 +120,6 @@ jobs:
           build-args: |
             VERSION=${{ env.BUILD_VERSION }}
             TARGETPLATFORM=${{ env.BUILD_PLATFORM }}
-            TARGETOS=linux
-            TARGETARCH=amd64
           cache-from: |
             type=gha,scope=${{ github.event.repository.default_branch }}
             type=gha,scope=${{ github.ref_name }}
