@@ -133,7 +133,7 @@ func (reader *EventReader) ProcessWorkflowJobEvent(ctx context.Context, event in
 			log.Error(err, "reading workflow job log")
 			return
 		} else {
-			log.Info("reading workflow_job logs for in progress job", "workflow_job_status", *e.WorkflowJob.Status, "parseResult", &parseResult)
+   log.Info("reading workflow_job logs for in progress job", "workflow_job_status", *e.WorkflowJob.Status, "parseResult", parseResult)
 		}
 
 		githubWorkflowJobQueueDurationSeconds.With(labels).Observe(parseResult.QueueTime.Seconds())
