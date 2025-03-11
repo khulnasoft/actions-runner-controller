@@ -108,9 +108,9 @@ func (reader *EventReader) ProcessWorkflowJobEvent(ctx context.Context, event in
 
 	is_main_branch := "false"
 
-	if strings.EqualFold(*e.WorkflowJob.HeadBranch, "main") || strings.EqualFold(*e.WorkflowJob.HeadBranch, "master") {
-		is_main_branch = "true"
-	}
+ if e.WorkflowJob.HeadBranch != nil && (strings.EqualFold(*e.WorkflowJob.HeadBranch, "main") || strings.EqualFold(*e.WorkflowJob.HeadBranch, "master")) {
+     is_main_branch = "true"
+ }
 
 	labels["is_main_branch"] = is_main_branch
 
